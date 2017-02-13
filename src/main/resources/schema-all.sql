@@ -1,4 +1,4 @@
-DROP company IF EXISTS
+DROP TABLE company IF EXISTS
 
 CREATE TABLE company (
 
