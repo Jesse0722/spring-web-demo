@@ -1,11 +1,8 @@
 package com.example.demo.controllers;
 
-import com.example.demo.Domain.User;
-import com.example.demo.services.UserService;
+import com.example.demo.domain.User;
 import com.example.demo.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,5 +25,15 @@ public class UserController {
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     public User register(String userName, String password){
         return userService.register(userName,password);
+    }
+
+    @RequestMapping(value = "/user",method = RequestMethod.GET)
+    public User findByUserName(String userName){
+        return userService.findByUserName(userName);
+    }
+
+    @RequestMapping(value = "/user/email",method = RequestMethod.GET)
+    public User findByEmail(String email){
+        return userService.findByEmail(email);
     }
 }

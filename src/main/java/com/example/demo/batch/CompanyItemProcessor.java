@@ -2,11 +2,7 @@ package com.example.demo.batch;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.batch.item.ItemProcessor;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by jesse on 2017/2/13.
@@ -19,9 +15,11 @@ public class CompanyItemProcessor implements ItemProcessor<Company,CompanyEntity
 
     @Override
     public CompanyEntity process(final Company company) throws Exception {
+        System.out.println("============companyName:"+company.getCompanyName());
         final String companyName = company.getCompanyName();
         final String companyAddress = company.getCompanyAddress();
-        final Date establishDate = new SimpleDateFormat("yyyy-MM-ddHH:mm:ss").parse(company.getEstablishDate());
+        //final Date establishDate = new SimpleDateFormat("yyyy-MM-ddHH:mm:ss").parse(company.getEstablishDate());
+        final String establishDate = company.getEstablishDate();
         final String province =company.getProvince();
         final String companyType = company.getCompanyType();
         final String legalPerson = company.getLegalPerson();

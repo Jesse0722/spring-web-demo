@@ -1,9 +1,6 @@
 package com.example.demo.services;
 
-import com.example.demo.Domain.User;
-import com.example.demo.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.example.demo.domain.User;
 
 /**
  * Created by jesse on 2017/2/12.
@@ -12,4 +9,6 @@ import org.springframework.stereotype.Service;
 public interface UserService {
     User login(String userName,String password);
     User register(String userName,String password);
+    User findByUserName(String userName);
+    User findByEmail(String email);
 }

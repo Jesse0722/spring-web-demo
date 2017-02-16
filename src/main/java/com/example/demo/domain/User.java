@@ -1,4 +1,4 @@
-package com.example.demo.Domain;
+package com.example.demo.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -49,7 +49,9 @@ public class User {
         this.email = email;
     }
 
-
+    public String toString(){
+        return "Username:"+userName+"\n"+"Password:"+password+"\n"+"Email:"+email;
+    }
 
 
 }

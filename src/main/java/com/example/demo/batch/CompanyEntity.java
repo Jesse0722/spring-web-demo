@@ -1,19 +1,17 @@
 package com.example.demo.batch;
 
-import java.util.Date;
-
 /**
  * Created by jesse on 2017/2/13.
  */
 public class CompanyEntity {
     private String companyName;
     private String province;
-    private Date establishDate;
+    private String establishDate;
     private String companyType;
     private String legalPerson;
     private String companyAddress;
 
-    public CompanyEntity(String companyName, String province, Date establishDate, String companyType, String legalPerson, String companyAddress) {
+    public CompanyEntity(String companyName, String province, String establishDate, String companyType, String legalPerson, String companyAddress) {
         this.companyName = companyName;
         this.province = province;
         this.establishDate = establishDate;
@@ -39,11 +37,11 @@ public class CompanyEntity {
         this.province = province;
     }
 
-    public Date getEstablishDate() {
+    public String getEstablishDate() {
         return establishDate;
     }
 
-    public void setEstablishDate(Date establishDate) {
+    public void setEstablishDate(String establishDate) {
         this.establishDate = establishDate;
     }
 
@@ -71,4 +69,7 @@ public class CompanyEntity {
         this.companyAddress = companyAddress;
     }
 
+    public String toString(){
+        return "companyName:"+companyName+","+"legalPerson:"+legalPerson;
+    }
 }
